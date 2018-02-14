@@ -1,5 +1,5 @@
 {
-  "name": "agenda-master",
+  "name": "cd",
   "version": "1.0.0",
   "description": "Curso da caelum",
   "main": "index.js",
@@ -16,5 +16,6 @@
   "dependencies": {
     "json-server": "^0.12.1",
     "lite-server": "^2.3.0"
-  }
+  },
+  "devDependencies": {}
 }
