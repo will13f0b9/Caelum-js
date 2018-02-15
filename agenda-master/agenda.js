@@ -97,7 +97,7 @@
                     <td>${item.name}</td>
                     <td>${item.email}</td>
                     <td>${item.fone}</td>
-                    <td><a href="#">Excluir</a></td>
+                    <td><a href="#" data-action="delete" data-id="${item.id}">Excluir</a></td>
                 </tr>`
             );// `` é uma template string que da para colocar codigo html, multilinhas de string, etc
         });
@@ -106,12 +106,34 @@
         
     }
 
-    var removeContacts = function(){};
+    var removeContacts = function(e){
+        e.preventDefault();
+        if(e.target.dataset.action === "delete")
+        {
+            var id = e.target.dataset.id;
+            //forma mais simples de trabalhar com ajax.
+            var endpoint = `http://localhost:8000/contacts/${id}`;
+            var conf ={
+                method: "DELETE",
+                headers: new Headers({"Content-type": "application/json"})//gera um header no formato json usando construtor
+            };
+        //
+            fetch(endpoint,conf)
+            .then(listContacts)
+            .catch(removeContactError);//se der errado 
+
+
+        }   
+    };
+    var removeContactError = function(){
+
+    }
 
     var init = function(){
         //mapping events.
         ui.button.addEventListener("click",validateFields);
         listContacts();
+        ui.table.addEventListener("click",removeContacts);
         
         
     }();
