@@ -1,5 +1,5 @@
 (function(){
-    console.log("starting app..");
+    //console.log("starting app..");
 
     //U.I
     var ui ={
@@ -101,6 +101,13 @@
                 </tr>`
             );// `` é uma template string que da para colocar codigo html, multilinhas de string, etc
         });
+        if(html.length == 0){
+            html.push(`
+                <tr>
+                    <td colspan="5">Não existem dados registrados!</td>
+                </tr>`
+            );
+        }
         //console.log(html.join(""));//.join transforma array em texto
         ui.table.innerHTML = html.join("");
         
@@ -108,7 +115,7 @@
 
     var removeContacts = function(e){
         e.preventDefault();
-        if(e.target.dataset.action === "delete")
+        if(e.target.dataset.action === "delete" && confirm("Deseja excluir?"))
         {
             var id = e.target.dataset.id;
             //forma mais simples de trabalhar com ajax.

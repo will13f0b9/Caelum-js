@@ -1,40 +1,16 @@
 {
   "contacts": [
     {
-      "id": 1,
-      "name": "William",
-      "email": "teste@globo.com",
-      "fone": "6666-7777"
-    },
-    {
       "name": "william",
-      "email": "william@uol.com",
-      "fone": "1213123",
+      "email": "www",
+      "fone": "21323",
+      "id": 1
+    },
+    {
+      "name": "www",
+      "email": "123123",
+      "fone": "123123",
       "id": 2
-    },
-    {
-      "name": "MAr",
-      "email": "teste@eee.com.br",
-      "fone": "121312311",
-      "id": 3
-    },
-    {
-      "name": "joanma",
-      "email": "joana.teste@bol.com",
-      "fone": "11213213",
-      "id": 4
-    },
-    {
-      "name": "wewqewe",
-      "email": "qwewe",
-      "fone": "12312323",
-      "id": 5
-    },
-    {
-      "name": "weqwe",
-      "email": "weqweq",
-      "fone": "12321313",
-      "id": 6
     }
   ]
 }
